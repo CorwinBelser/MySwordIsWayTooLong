@@ -5,22 +5,25 @@ Shader "Custom/SnapVerts2"
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-		_PixelWidth("Pixel width", float) = 1.0
-		_PixelHeight("Pixel height", float) = 1.0
-		_ScreenWidth("Screen width", Range(0,5)) = 1.0
-		_ScreenHeight("Screen height", float) = 1.0
+		_PixelWidth("VertIntervalPixels", float) = 1.0
+		_PixelHeight("PixelIntervalPixels", float) = 1.0
+		_ScreenWidth("ScreenWidthPixels", Range(0,5)) = 1.0
+		_ScreenHeight("ScreenHeightPixels", float) = 1.0
 	}
 	SubShader
 	{
-		// No culling or depth
-//		Cull Off ZWrite Off ZTest Always
+		Tags { "RenderType"="Opaque"  "Queue"="Transparent" }
+		LOD 100
+		Blend SrcAlpha OneMinusSrcAlpha
 
 		Pass
 		{
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			
+			#pragma multi_compile_fog;
+			#pragma target 3.0
+
 			#include "UnityCG.cginc"
 
 			struct appdata
@@ -50,7 +53,7 @@ Shader "Custom/SnapVerts2"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.vertex = dx *  floor(o.vertex / dx);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-//                UNITY_TRANSFER_FOG(o,o.vertex);
+                UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
 			fixed4 frag (v2f i) : SV_Target
