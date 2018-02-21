@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4762323457118192}
   - component: {fileID: 33534905973203160}
   - component: {fileID: 23783333748488376}
+  - component: {fileID: 64038406379707856}
+  - component: {fileID: 114092918891048228}
   m_Layer: 0
   m_Name: WideRoomA
   m_TagString: Untagged
@@ -140,3 +142,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1002934509427504}
   m_Mesh: {fileID: 4300000, guid: fc84e3c55c2243a4480495ce915a5599, type: 3}
+--- !u!64 &64038406379707856
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002934509427504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: fc84e3c55c2243a4480495ce915a5599, type: 3}
+--- !u!114 &114092918891048228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002934509427504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a02ff9fd533504a8a60a106d94b21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connected: 0
