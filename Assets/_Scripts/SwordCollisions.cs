@@ -66,6 +66,9 @@ public class SwordCollisions : MonoBehaviour
 	}
 
 	public float willCollideWithMovement(Vector3 Movement) {
+		if (!SwordTip.activeInHierarchy) {
+			return -2f;
+		}
 		if (movesleeping) {
 			return -1f;
 		}

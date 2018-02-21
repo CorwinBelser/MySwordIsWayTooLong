@@ -111,7 +111,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
-			float obstacleDist = swordCollisions.willCollideWithMovement (m_MoveDir * Time.fixedDeltaTime);
+			float obstacleDist = GetComponent<SwordCollisions>().willCollideWithMovement (m_MoveDir * Time.fixedDeltaTime);
 			if (obstacleDist == -1f) {
 				Debug.Log ("what");
 				m_MoveDir.x = 0;
