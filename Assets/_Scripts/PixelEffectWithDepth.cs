@@ -12,6 +12,8 @@ namespace Codexus
         public float pixelWidth = 0.05f;
         [Range(1.0f, 20f)]
         public float pixelHeight = 0.05f;
+		[Range(0f, 1.0f)]
+		public float _meanShift = .5f;
 
         private Material pixelMaterial = null;
 
@@ -43,6 +45,7 @@ namespace Codexus
             pixelMaterial.SetFloat("_PixelHeight", pixelHeight);
             pixelMaterial.SetFloat("_ScreenWidth", source.width);
             pixelMaterial.SetFloat("_ScreenHeight", source.height);
+			pixelMaterial.SetFloat ("_MeanShift", _meanShift);
 
             Graphics.Blit(source, destination, pixelMaterial);
         }

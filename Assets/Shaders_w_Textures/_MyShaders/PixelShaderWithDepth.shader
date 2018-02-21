@@ -8,6 +8,7 @@ Shader "Custom/PixelShaderWithDepth" {
 		_PixelHeight("Pixel height", float) = 1.0
 		_ScreenWidth("Screen width", float) = 1.0
 		_ScreenHeight("Screen height", float) = 1.0
+		_MeanShift("Mean Shift", Range(0,1)) = .5
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -39,12 +40,15 @@ Shader "Custom/PixelShaderWithDepth" {
 			half _PixelHeight;
 			half _ScreenWidth;
 			half _ScreenHeight;
+			half _MeanShift;
 
 			//Fragment Shader
 			half4 frag (v2f i) : COLOR{
 			   float depthValue = 1 - Linear01Depth (tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r);
 			   half4 depth;
-			
+
+			   depthValue *= (_MeanShift * 2) - _MeanShift;
+
 			   depth.r = depthValue;
 			   depth.g = depthValue;
 			   depth.b = depthValue;

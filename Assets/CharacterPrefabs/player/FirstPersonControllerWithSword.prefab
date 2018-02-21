@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 114828582938426608}
   - component: {fileID: 114255351661508712}
   - component: {fileID: 114606735103496552}
+  - component: {fileID: 114496374826410546}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -159,8 +160,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297555641238846}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08, z: -14.596}
+  m_LocalRotation: {x: 0, y: 0.10778248, z: 0, w: 0.99417454}
+  m_LocalPosition: {x: 0, y: -1.6302817, z: -14.596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4259725452805020}
@@ -187,7 +188,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1530720203135244}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.034463447, y: 0, z: 0, w: 0.999406}
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -255,7 +256,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1031522366302212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00028307, y: -0.28, z: 0.46}
+  m_LocalPosition: {x: -0.030053997, y: -0.30977094, z: 0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4564805238290832}
@@ -442,7 +443,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -589,33 +590,33 @@ TrailRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.484, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0.88965464, a: 1}
+      key2: {r: 0.41911763, g: 0.6634888, b: 1, a: 0}
+      key3: {r: 0, g: 1, b: 0.9172416, a: 0}
+      key4: {r: 1, g: 1, b: 1, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
+      ctime1: 10409
+      ctime2: 29491
+      ctime3: 45489
+      ctime4: 65535
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime1: 29105
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumColorKeys: 5
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 1
@@ -657,7 +658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pixelWidth: 0.05
   pixelHeight: 0.05
---- !u!114 &114606735103496552
+--- !u!114 &114496374826410546
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -665,11 +666,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530720203135244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40ede6202e64d4d01ba391cfc9c1295f, type: 3}
+  m_Script: {fileID: 11500000, guid: 33bd82014365f48b7b05b3a96b321abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pixelWidth: 2
   pixelHeight: 2
+  _meanShift: 0.68
+  falloffGradient: {fileID: 2800000, guid: c7a87f9e021b44e5d8e52cd8dcf858ef, type: 3}
+--- !u!114 &114606735103496552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530720203135244}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ede6202e64d4d01ba391cfc9c1295f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelWidth: 4.2
+  pixelHeight: 4.5
+  _meanShift: 0.37
 --- !u!114 &114648543512026560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -681,7 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsWalking: 0
+  m_IsWalking: 1
   m_WalkSpeed: 5
   m_RunSpeed: 10
   m_RunstepLenghten: 0.7
@@ -699,8 +716,8 @@ MonoBehaviour:
     lockCursor: 1
   m_UseFovKick: 0
   m_FovKick:
-    Camera: {fileID: 0}
-    originalFov: 0
+    Camera: {fileID: 20872073358658146}
+    originalFov: 60
     FOVIncrease: 3
     TimeToIncrease: 1
     TimeToDecrease: 1
@@ -801,7 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422f00798f4774976a268a2ad96a2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImageEffectMaterial: {fileID: 2100000, guid: 150482d9bbf9447e8b83ba530bce85c0, type: 2}
+  ImageEffectMaterial: {fileID: 2100000, guid: c3ebe1887c48849aa9cdf7660c9342a5, type: 2}
 --- !u!124 &124647200802520640
 Behaviour:
   m_ObjectHideFlags: 1
